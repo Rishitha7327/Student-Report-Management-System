@@ -1,48 +1,77 @@
-Student Record Management System (C Program)
+Student Report Management System
 
-This is a simple Student Record Management System written in C.
-It allows Admin, Staff, and Guest users to manage student details with different access levels.
+This is a simple C console-based application that manages student academic records using text-file storage.
+It supports role-based login (Admin, Staff, Guest) and provides different operations depending on the user’s access level.
 
-Features
+The system allows the user to add, view, search, update, and (for admin only) delete student records, all stored in a persistent text file.
 
-Login system with three roles:
+📌 Features
+👨‍💼 Role-Based Login
 
-Admin – Add, display, search, update, delete students
+Admin: Add, View, Search, Update, Delete students
 
-Staff – Add, display, search, update students
+Staff: Add, View, Search, Update students
 
-Guest – View and search only
+Guest: View and Search only
 
-Store student details such as:
+Credentials are stored in credentials.txt.
 
-Registration Number
+📚 Student Record Functions
 
-Name
+Add Student — Enter registration number, name, branch, CGPA, year/sem
 
-Branch
+Display All Students — View all records in a tabular format
 
-CGPA
+Search Student — Search only by registration number
 
-Year/Semester
+Update Student Details — Modify existing records
 
-Records are saved in students.txt
+Delete Student — Admin-only permission
 
-Credentials stored in credentials.txt
+Exit — Safely close the program
 
-Data is loaded and saved automatically
+All records are saved in students.txt.
 
-Uses dynamic memory allocation and file handling
+🛠 Technologies Used
 
-File Formats
+Language: C
+
+Concepts: File Handling, Dynamic Memory Allocation, String Parsing
+
+Data Storage: Text files (students.txt, credentials.txt)
+
+User Access System: Role-based permissions
+
+📂 Project File Structure
+Student_Report_Management_System/
+│── srms.c
+│── srms.exe          (generated after compilation)
+│── credentials.txt   (stores usernames, passwords, roles)
+│── students.txt      (stores student records)
+
+🚀 How to Run
+
+Clone or download this repository.
+
+Compile the program using GCC:
+
+gcc srms.c -o srms
+
+
+Run the program:
+
+./srms
+
+
+Login using one of the default credentials:
+
+Username	Password	Role
+admin	adminpass	admin
+staff	staffpass	staff
+guest	guestpass	guest
+📄 Data Format
 credentials.txt
 username,password,role
-admin,adminpass,admin
-staff,staffpass,staff
-guest,guestpass,guest
 
 students.txt
-regNo, name, branch, cgpa, yearSem
-
-How to Compile and Run
-gcc main.c -o student_mgmt
-./student_mgmt
+REG001, John Doe, CSE, 8.5, 2-1
